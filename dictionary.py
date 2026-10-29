@@ -58,3 +58,18 @@ for word in words:
 for y in count:
     print(y + ": " + str(count[y]) + " times")
 file.close()
+
+##Minimum value selection in dictionary.
+
+file = open("olympians.txt", "r")
+words = file.read()
+word_count = {}
+for word in words:
+    if word not in word_count:
+        word_count[word] = 0
+    word_count[word] += 1
+count = list(word_count.keys())
+min_value = count[0]
+for i in count:
+    if word_count[i] < word_count[min_value]:
+        min_value = i
